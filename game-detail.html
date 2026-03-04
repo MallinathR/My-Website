@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Detail — GameVerse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .section { margin: 60px 0; padding: 0 20px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .trailer-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .trailer-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .req-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    .req-table th, .req-table td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
+    .req-table th { background: #f5f5f7; font-weight: 600; }
+    .buy-links { display: flex; gap: 20px; margin-top: 30px; }
+    .buy-btn { padding: 12px 30px; background: #0071e3; color: white; border-radius: 50px; text-decoration: none; transition: background 0.3s; }
+    .buy-btn:hover { background: #005bb5; }
+    .related-games { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .share-buttons { display: flex; gap: 15px; margin-top: 30px; }
+    .share-btn { padding: 10px 20px; background: #444; color: white; border-radius: 50px; text-decoration: none; font-size: 0.9rem; }
+  </style>
+</head>
+
+<body id="game-detail">
+ <header class="navbar">
+  <div class="logo">GameVerse</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="demo.html">Demo</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="support.html">Support</a>
+  </nav>
+
+  <div style="display:flex; align-items:center; gap:25px;">
+    <div id="user-section"></div>
+    
+    
+  </div>
+
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+</header>
+
+  <section class="game-hero" style="position:relative; height:70vh; overflow:hidden; background:rgba(0,0,0,0.5);">
+    <img id="game-hero-img" src="" alt="Game Hero" style="width:100%; height:100%; object-fit:cover; transition:transform 1.5s ease; transform:scale(1.1);">
+    <div style="position:absolute; bottom:50px; left:50%; transform:translateX(-50%); text-align:center; color:white; text-shadow:0 2px 15px rgba(0,0,0,0.7);">
+      <h1 id="game-title" style="font-size:4rem; margin:0;"></h1>
+      <div style="margin-top:20px; font-size:1.5rem; color:#ffd700;">★★★★★ <span id="rating-text">(4.8 / 5)</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Overview</h2>
+    <p id="game-description" style="font-size:1.2rem; line-height:1.8; margin-bottom:40px;"></p>
+  </section>
+
+  <section class="section">
+  <h2>Trailer</h2>
+  <div class="trailer-container">
+    <iframe 
+      id="trailer-frame" 
+      src="" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+  <section class="section">
+    <h2 style="margin-bottom: 25px;">System Compatibility Checker</h2>
+    <div class="glass-card compatibility-container" style="padding: 30px; border-radius: 20px;">
+        <div class="ios-grid">
+            <div class="ios-input-group">
+                <label class="compat-label">RAM</label>
+                <div class="ios-select-wrapper"><select id="user-ram" class="ios-select">
+                    <option value="4">4 GB DDR4</option><option value="8" selected>8 GB DDR4</option><option value="16">16 GB DDR4</option>
+                </select></div>
+            </div>
+            <div class="ios-input-group">
+                <label class="compat-label">Processor</label>
+                <div class="ios-select-wrapper"><select id="user-cpu" class="ios-select">
+                    <option value="5" selected>i5 11th/12th Gen</option><option value="7">i7 11th/12th Gen</option><option value="9">i9 Extreme</option>
+                </select></div>
+            </div>
+            <div class="ios-input-group">
+                <label class="compat-label">Graphics</label>
+                <div class="ios-select-wrapper"><select id="user-gpu" class="ios-select">
+                    <option value="2" selected>GTX 2GB</option><option value="4">RTX 4GB</option><option value="8">RTX 8GB+</option>
+                </select></div>
+            </div>
+        </div>
+
+        <button onclick="checkCompatibility()" class="ios-btn">Analyze Performance</button>
+        
+        <div class="scan-container" id="scan-cont"><div class="scan-bar" id="scan-bar"></div></div>
+
+        <div id="compat-result" class="ios-result-card" style="display: none; margin-top: 25px;">
+            <h3 id="result-rating"></h3>
+            <p id="result-desc"></p>
+        </div>
+    </div>
+</section>
+
+  <div class="purchase-actions" style="display: flex; align-items: center; gap: 15px; margin-top: 25px;">
+    <button id="main-cart-btn" class="ios-btn" style="flex: 1; padding: 12px; font-size: 1rem;">
+        🛒 Add to Cart
+    </button>
+    
+    <button id="detail-wishlist-btn" class="wish-pill">
+        <span id="wish-icon">🤍</span>
+    </button>
+</div>
+
+  <section class="section">
+    <h2>Screenshots</h2>
+    <div class="screenshots" id="screenshots" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:25px;"></div>
+  </section>
+
+  <section class="section">
+    <h2>User Reviews</h2>
+    <div id="reviews" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(350px,1fr)); gap:30px;"></div>
+  </section>
+
+  <section class="section">
+    <h2>Related Games</h2>
+    <div class="related-games" id="related-games"></div>
+  </section>
+
+  <section class="section">
+    <h2>Share This Game</h2>
+    <div class="share-buttons">
+      <a href="#" class="share-btn" style="background:#1da1f2;">Share on Twitter</a>
+      <a href="#" class="share-btn" style="background:#1877f2;">Share on Facebook</a>
+      <a href="#" class="share-btn" style="background:#ff4500;">Share on Reddit</a>
+    </div>
+  </section>
+
+  <div id="toast" class="toast-notification"></div>
+
+  <footer>
+    <p>copyright © 2026 GameVerse</p>
+  </footer>
+
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/user.js"></script>
+</body>
+</html>

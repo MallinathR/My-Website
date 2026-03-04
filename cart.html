@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout Terminal — GameVerse</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="page-transition">
+  <header class="navbar">
+    <div class="logo">GameVerse</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="demo.html">Demo</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <div id="user-section"></div>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </header>
+
+  <section class="container" style="padding: 60px 20px; min-height: 80vh;">
+    <h1 class="reveal" style="margin-bottom: 40px; text-align: center; font-size: 2.5rem; letter-spacing: 2px;">Checkout Terminal</h1>
+    
+    <div id="cart-wrapper" style="display: grid; grid-template-columns: 1.8fr 1fr; gap: 30px; align-items: start;">
+        <div id="cart-items-list"></div>
+
+        <div class="glass-card" style="padding: 30px; border-radius: 24px; position: sticky; top: 100px; border: 1px solid rgba(255,255,255,0.1);">
+            <h2 style="margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">Order Summary</h2>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; opacity: 0.8;">
+                <span>Subtotal</span>
+                <span id="subtotal-val">$0.00</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 25px; color: #00ff88; font-size: 1.4rem; font-weight: 800;">
+                <span>Total</span>
+                <span id="total-val">$0.00</span>
+            </div>
+            <button class="ios-btn" style="width: 100%;" onclick="authorizePurchase()">Authorize Purchase</button>
+        </div>
+    </div>
+
+    <div id="empty-cart-msg" style="display:none; text-align:center; padding: 100px 0;">
+        <p style="font-size: 1.5rem; opacity: 0.5;">Terminal Empty. No games detected.</p>
+        <a href="games.html" class="ios-btn" style="display:inline-block; margin-top:20px; text-decoration:none;">Scout Games</a>
+    </div>
+  </section>
+
+  <div id="success-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; flex-direction:column; align-items:center; justify-content:center; text-align:center;">
+    <div style="font-size:5rem; margin-bottom:20px;">✅</div>
+    <h1 style="color:#00ff88; letter-spacing:2px;">PURCHASE AUTHORIZED</h1>
+    <p style="opacity:0.7; margin-top:10px;">Digital keys have been sent to your vault.</p>
+    <button onclick="location.href='index.html'" class="ios-btn" style="margin-top:30px;">Return to Base</button>
+</div>
+
+  <div id="toast" class="toast-notification"></div>
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/user.js"></script>
+</body>
+</html>

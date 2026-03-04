@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Games — GameVerse</title>
+
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+  <header class="navbar">
+  <div class="logo">GameVerse</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="demo.html">Demo</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="support.html">Support</a>
+  </nav>
+
+  <div style="display:flex; align-items:center; gap:25px;">
+    <div id="user-section"></div>
+    
+  </div>
+
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+</header>
+
+  <section class="page-hero">
+    <h1 class="reveal">AAA Game Demos</h1>
+    <p class="reveal delay">Explore next-gen demo experiences</p>
+  </section>
+
+  <section class="games-grid">
+    <div class="game-card reveal" onclick="window.location.href='game-detail.html?game=gta5'" style="cursor:pointer;">
+      <img src="assets/images/gta5.jpg" alt="GTA 5">
+      <div class="game-info">
+        <h3>GTA V</h3>
+        <p>Open-world action demo</p>
+        <button class="wishlist-btn" data-game="gta5">♡</button>
+        <a href="demo.html" class="card-btn" onclick="event.stopPropagation();">Play Demo</a>
+        <a href="#" class="buy-btn" data-game="gta5" onclick="event.stopPropagation();">Buy Full Game</a>
+      </div>
+    </div>
+
+    <div class="game-card reveal delay" onclick="window.location.href='game-detail.html?game=rdr2'" style="cursor:pointer;">
+      <img src="assets/images/rdr2.jpg" alt="RDR 2">
+      <div class="game-info">
+        <h3>Red Dead Redemption 2</h3>
+        <p>Cinematic western demo</p>
+        <button class="wishlist-btn" data-game="rdr2">♡</button>
+        <a href="demo.html" class="card-btn" onclick="event.stopPropagation();">Play Demo</a>
+        <a href="#" class="buy-btn" data-game="rdr2" onclick="event.stopPropagation();">Buy Full Game</a>
+      </div>
+    </div>
+
+    <div class="game-card reveal delay-2" onclick="window.location.href='game-detail.html?game=forza'" style="cursor:pointer;">
+      <img src="assets/images/forza.jpg" alt="Forza Horizon 5">
+      <div class="game-info">
+        <h3>Forza Horizon 5</h3>
+        <p>High-speed racing demo</p>
+        <button class="wishlist-btn" data-game="forza">♡</button>
+        <a href="demo.html" class="card-btn" onclick="event.stopPropagation();">Play Demo</a>
+        <a href="#" class="buy-btn" data-game="forza" onclick="event.stopPropagation();">Buy Full Game</a>
+      </div>
+    </div>
+
+    <div class="game-card reveal" onclick="window.location.href='game-detail.html?game=hogwarts'" style="cursor:pointer;">
+      <img src="assets/images/hogwarts.jpg" alt="Hogwarts Legacy">
+      <div class="game-info">
+        <h3>Hogwarts Legacy</h3>
+        <p>Magic exploration demo</p>
+        <button class="wishlist-btn" data-game="hogwarts">♡</button>
+        <a href="demo.html" class="card-btn" onclick="event.stopPropagation();">Play Demo</a>
+        <a href="#" class="buy-btn" data-game="hogwarts" onclick="event.stopPropagation();">Buy Full Game</a>
+      </div>
+    </div>
+
+    <div class="game-card reveal delay" onclick="window.location.href='game-detail.html?game=cyberpunk'" style="cursor:pointer;">
+      <img src="assets/images/cyberpunk.jpg" alt="Cyberpunk 2077">
+      <div class="game-info">
+        <h3>Cyberpunk 2077</h3>
+        <p>Futuristic action demo</p>
+        <button class="wishlist-btn" data-game="cyberpunk">♡</button>
+        <a href="demo.html" class="card-btn" onclick="event.stopPropagation();">Play Demo</a>
+        <a href="#" class="buy-btn" data-game="cyberpunk" onclick="event.stopPropagation();">Buy Full Game</a>
+      </div>
+    </div>
+
+    <div class="game-card reveal delay-2" onclick="window.location.href='game-detail.html?game=gow'" style="cursor:pointer;">
+      <img src="assets/images/gow.jpg" alt="God of War Ragnarok">
+      <div class="game-info">
+        <h3>God of War Ragnarök</h3>
+        <p>Mythological combat demo</p>
+        <button class="wishlist-btn" data-game="gow">♡</button>
+        <a href="demo.html" class="card-btn" onclick="event.stopPropagation();">Play Demo</a>
+        <a href="#" class="buy-btn" data-game="gow" onclick="event.stopPropagation();">Buy Full Game</a>
+      </div>
+    </div>
+
+    <div class="game-card reveal" onclick="window.location.href='game-detail.html?game=elden'" style="cursor:pointer;">
+      <img src="https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg" alt="Elden Ring">
+      <div class="game-info">
+        <h3>Elden Ring</h3>
+        <p>Open-world fantasy demo</p>
+        <button class="wishlist-btn" data-game="elden">♡</button>
+        <a href="demo.html" class="card-btn" onclick="event.stopPropagation();">Play Demo</a>
+        <a href="#" class="buy-btn" data-game="elden" onclick="event.stopPropagation();">Buy Full Game</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard" id="dashboard" style="padding:60px 0;"></section>
+
+  <footer>
+    <p>copyright © 2026 GameVerse</p>
+  </footer>
+
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/user.js"></script>
+</body>
+</html>

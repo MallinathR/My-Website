@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <title>Playable Demo — GameVerse</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    canvas { display: block; margin: 140px auto 40px; background: #111; border-radius: 20px; }
+    .hud { position: fixed; top: 90px; left: 50%; transform: translateX(-50%); display: flex; gap: 30px; font-weight: 500; }
+  </style>
+</head>
+
+<body>
+ <header class="navbar">
+  <div class="logo">GameVerse</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">Games</a>
+    <a href="demo.html">Demo</a>
+    <a href="wishlist.html">Wishlist</a>
+    <a href="support.html">Support</a>
+  </nav>
+
+  <div style="display:flex; align-items:center; gap:25px;">
+    <div id="user-section"></div>
+    
+  </div>
+
+  <button id="themeToggle" class="theme-toggle">🌙</button>
+</header>
+
+  <div class="hud">
+    <div id="score">Score: 0</div>
+    <div id="fps">FPS: 0</div>
+  </div>
+
+  <canvas id="gameCanvas" width="900" height="500"></canvas>
+
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/user.js"></script>
+  <script src="js/demo-engine.js"></script>
+  <script src="js/sounds.js"></script>
+</body>
+</html>

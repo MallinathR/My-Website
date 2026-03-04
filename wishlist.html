@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark"> <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Gaming Vault — GameVerse</title>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body class="page-transition">
+  <header class="navbar">
+    <div class="logo">GameVerse</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="demo.html">Demo</a>
+      <a href="wishlist.html" class="active">Wishlist</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <div id="user-section"></div>
+    <button id="themeToggle" class="theme-toggle">🌙</button>
+  </header>
+
+  <section class="page-hero">
+    <h1 class="reveal">The Gaming Vault</h1>
+    <p class="reveal delay">Your handpicked collection of AAA experiences.</p>
+  </section>
+
+  <section class="container" style="padding: 40px 60px;">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px;">
+      <h2 id="wishlist-count" style="font-size: 1.8rem;">Vault Items (0)</h2>
+      <select id="sort-select" class="glass-select">
+        <option value="default">Recently Added</option>
+        <option value="alpha">Alphabetical (A-Z)</option>
+      </select>
+    </div>
+
+    <div class="wishlist-grid" id="wishlist-grid">
+        </div>
+  </section>
+
+  <div id="toast" class="toast-notification"></div>
+
+  <footer>
+    <p>copyright © 2026 GameVerse |</p>
+  </footer>
+
+  <script src="js/theme-toggle.js"></script>
+  <script src="js/user.js"></script>
+</body>
+</html>
